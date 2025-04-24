@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  expo:
+  app:
     build: .
     container_name: test-expo
     ports:
@@ -11,4 +11,5 @@ services:
       - .:/app
     environment:
       - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+      - EXPO_HOSTNAME=0.0.0.0
     tty: true
