@@ -27,19 +27,48 @@ git clone
 
 ## 実行したコマンド
 
-- $ npx create-expo-app@latest
-    - ↑これは各開発者側で実行しなくてOK、という想定
-- $ cd text-expo
-- $ npm run ios
-    - https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=simulated
-    - 上記手順を実行
-    - iOSシミュレータ起動確認OK
-- $ npm run android
-    - https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated
-    - 上記手順を実行
-    - Androidエミュレータ起動確認OK
+```
+$ npx create-expo-app@latest
+# ↑これは各開発者側で実行しなくてOK、という想定
+
+$ cd text-expo
+$ npm run ios
+
+# https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=simulated
+# 上記手順を実行
+# →iOSシミュレータ起動確認OK
+
+$ npm run android
+
+# https://docs.expo.dev/get-started/set-up-your-environment/?platform=android&device=simulated
+# 上記手順を実行
+# →Androidエミュレータ起動確認OK
+```
 
 ここまではローカル環境での実行確認
 
-以降はDocker環境構築手順をメモしていく
+## cloneした後の流れ
+
+ルートディレクトリで下記を実行していく
+
+```
+$ cd test-expo
+$ sh shells/start.sh
+```
+
+これでコンテナが作られ、必要なnode_modulesがインストールされる
+
+その後アプリ開発用のサーバー（metro bundler）が起動する
+
+metro bundlerが出力するExpo Go用URL、QRコードを確認
+
+```
+$ sh shells/watch-logs.sh
+```
+
+コンテナ停止
+
+```
+$ sh shells/stop.sh
+```
 
